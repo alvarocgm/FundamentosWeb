@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Ajusta a escala inicial para o zoom da página e a largura para o tamanho do dispositivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Shop</title>
+  <!-- Incluindo o Bootstrap para estilização e o CSS personalizado do Pet Shop -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="petshop_styles.css">
+</head>
+
+<body>
+  <!-- Cabeçalho da página com logotipo e botões de cadastro e saída -->
+  <div class="header">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center">
+        <div class="logo-container">
+          <img src="logo.png" alt="Pet Shop Logo" width="50">
+        </div>
+
+        <!-- Botão para abrir modal de cadastro de pet -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastroPetModal">
+          Cadastrar Pet
+        </button>
+
+        <!-- Link para sair (normalmente redirecionaria para a página de logout ou página principal) -->
+        <a href="login.html" class="btn btn-primary ml-auto btn-sair">Sair</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corpo principal da página com listagem de produtos e serviços oferecidos -->
+  <div class="background-grey">
+    <!-- Coluna para exibição de produtos -->
+    <div class="row">
+      <div class="col-2">
+        <div class="product-service-title">Produtos</div>
+        <div class="service-product-container">
+          <div class="row">
+            <div class="col-12">
+              <div class="icon-description">
+                <div class="product-service-title">Ração Seca</div>
+                <div id="carouselSeca" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="seca1.png" class="d-block w-100" alt="Ração Seca 1">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="seca2.png" class="d-block w-100" alt="Ração Seca 2">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="seca3.png" class="d-block w-100" alt="Ração Seca 3">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselSeca" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselSeca" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                  </a>
+                </div>
+                <div class="service-description-tag">Ração seca ideal para cães e gatos adultos!</div>
+                <div class="price-tag">R$ 20,99</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="icon-description">
+                <div class="product-service-title">Ração Úmida</div>
+                <div id="carouselUmida" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="umida1.png" class="d-block w-100" alt="Ração Úmida 1">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="umida2.png" class="d-block w-100" alt="Ração Úmida 2">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="umida3.png" class="d-block w-100" alt="Ração Úmida 3">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselUmida" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselUmida" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                  </a>
+                </div>
+                <div class="service-description-tag">Ração úmida ideal para cães e gatos filhotes!</div>
+                <div class="price-tag">R$ 25,99</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Coluna para exibição de serviços -->
+      <div class="col-4">
+        <!-- Seção de serviços com opções de agendamento -->
+        <div class="product-service-title">Serviços</div>
+        <div class="service-product-container">
+          <div class="row">
+            <div class="col-6">
+              <div class="icon-description">
+                <div class="product-service-title">Banho</div>
+                <img class="icon" src="banho.png" alt="Banho">
+                <div class="service-description-tag">Agende seu banho para seu pet! Para grande e médio porte!</div>
+                <button type="button" class="new-btn-style" data-toggle="modal" data-target="#agendamentoModal">
+                  Agende o banho
+                </button>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="icon-description">
+                <div class="product-service-title">Tosa</div>
+                <img class="icon" src="tosa.png" alt="Tosa">
+                <div class="service-description-tag">Agende uma tosa para seu pet! Aceitamos grande e médio porte!
+                </div>
+                <button type="button" class="new-btn-style" data-toggle="modal" data-target="#agendamentoModal">
+                  Agende a tosa
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Modal para agendamento de serviços -->
+  <div class="modal fade" id="agendamentoModal" tabindex="-1" role="dialog" aria-labelledby="agendamentoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="agendamentoModalLabel">Agendamento</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="dataAgendamento">Escolha a data</label>
+            <input type="date" class="form-control" id="dataAgendamento">
+          </div>
+
+          <div class="form-group">
+            <label for="horaAgendamento">Em qual horário?</label>
+            <select class="form-control" id="horaAgendamento">
+              <option>10:00</option>
+              <option>10:30</option>
+              <option>11:00</option>
+              <option>11:30</option>
+              <option>12:00</option>
+              <option>12:30</option>
+            </select>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="teleBusca">
+            <label class="custom-control-label" for="teleBusca">Deseja tele-busca?</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="salvarAgendamentoBtn" data-dismiss="modal">Salvar
+            agendamento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para cadastro de pet -->
+  <div class="modal fade" id="cadastroPetModal" tabindex="-1" role="dialog" aria-labelledby="cadastroPetModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cadastroPetModalLabel">Cadastro de Pet</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formCadastroPet">
+            <div class="form-group">
+              <label for="nomePet">Nome</label>
+              <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet" required>
+            </div>
+
+            <div class="form-group">
+              <label for="tipoPet">Tipo</label>
+              <input type="text" class="form-control" id="tipoPet" placeholder="Exemplo: Cão, Gato" required>
+            </div>
+
+            <div class="form-group">
+              <label for="racaPet">Raça</label>
+              <input type="text" class="form-control" id="racaPet" placeholder="Digite a raça do pet" required>
+            </div>
+
+            <div class="form-group">
+              <label for="temperamentoPet">Temperamento</label>
+              <input type="text" class="form-control" id="temperamentoPet" placeholder="Exemplo: Calmo, Agressivo"
+                required>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn btn-primary">Salvar cadastro</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Incluindo os arquivos JavaScript necessários para Bootstrap e funcionalidades adicionais -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="petshop_scripts.js"></script>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4>Informações de Contato</h4>
+          <ul>
+            <li>Endereço: Rua dos Bichos, 1234 - Cidade dos Bichos</li>
+            <li>Telefone: (51) 1234-5678</li>
+            <li>Email: contato@petshopdoalvaro.com</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4>Links de Navegação</h4>
+          <ul>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Serviços</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>&copy; 2024 Pet Shop do Alvaro. Todos os direitos reservados.</h5>
+          <p>Desenvolvido por: Alvaro</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
