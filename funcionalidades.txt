@@ -1,0 +1,17 @@
+*O sistema é dividido em duas partes principais: uma página de login e registro, e a página principal do Pet Shop que lista produtos e serviços disponíveis.
+
+===Página de Login e Registro===
+*Login: Usuários que já possuem uma conta podem entrar inserindo suas credenciais de email e senha. A página oferece um formulário simples para o login.
+*Registro: Novos usuários podem criar uma conta fornecendo informações básicas como nome, email, senha, endereço, telefone, e selecionando se desejam receber newsletters. Também é 
+necessário escolher um gênero (masculino ou feminino).
+
+===Página Principal do Pet Shop===
+--> Após o login ou registro, os usuários são levados para a página principal, que apresenta:
+*Produtos: Uma lista de produtos (como rações secas e úmidas) com a opção de visualizar diferentes tipos por meio de um carrossel de imagens. Cada produto tem uma descrição e preço.
+*Serviços: Serviços oferecidos pelo Pet Shop, como banho e tosa, incluindo uma descrição, imagem ilustrativa e um botão para agendar o serviço. O agendamento é feito através de um modal que permite escolher a data, horário e se deseja tele-busca.
+
+===Interação do Usuário===
+*Cadastro de Pet: Há um botão para cadastrar pets, onde o usuário pode inserir informações como nome, tipo, raça e temperamento do pet.
+*Agendamento de Serviços: Usuários podem agendar serviços para seus pets selecionando a data e horário desejados.
+*Navegação e Informações: A página principal também contém um cabeçalho com o logo do Pet Shop, um botão para cadastro de pets, um link de saída e um rodapé com informações de contato, links de navegação e direitos autorais.
+
